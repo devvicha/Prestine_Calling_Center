@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "brand": "Prestine Mobile Car Wash",
+    "version": "2025-11-11",
+    "currency": "LKR",
+    "source": "Prestine price sheet (Standard + AutoGlym)",
+    "description": "Complete pricing for all Prestine car wash services including Standard and AutoGlym premium lines"
+  },
+  "vehicle_types": ["Car/Mini Van", "Crossover", "SUV", "Van"],
+  "packages": [
+    {
+      "brand": "Standard",
+      "name": "Wash + Vacuum",
+      "description": "Basic exterior wash and interior vacuum cleaning",
+      "prices": {
+        "Car/Mini Van": 2500,
+        "Crossover": 2700,
+        "SUV": 2800,
+        "Van": 2800
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Wash & Vacuum (Meguiar's PH balanced Shampoo for coated Vehicles)",
+      "description": "Premium pH balanced shampoo safe for ceramic-coated vehicles",
+      "prices": {
+        "Car/Mini Van": 2700,
+        "Crossover": 2800,
+        "SUV": 2900,
+        "Van": 2900
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Wash + Vacuum + Wax (AutoGlym)",
+      "description": "Complete wash, vacuum, and hand wax application using AutoGlym products",
+      "prices": {
+        "Car/Mini Van": 3500,
+        "Crossover": 3800,
+        "SUV": 4200,
+        "Van": 4500
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Wash + Vacuum + Machine Wax (AutoGlym)",
+      "description": "Complete wash, vacuum, and machine-applied wax for deeper shine",
+      "prices": {
+        "Car/Mini Van": 5000,
+        "Crossover": 5500,
+        "SUV": 6000,
+        "Van": 6500
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Leather Treatment",
+      "description": "Professional leather cleaning, conditioning, and protection",
+      "prices": {
+        "Car/Mini Van": 3500,
+        "Crossover": 3500,
+        "SUV": 3500,
+        "Van": 3500
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Water Spot Remover and Glass Polish (AutoGlym)",
+      "description": "Remove water spots and polish glass for crystal-clear visibility",
+      "prices": {
+        "Car/Mini Van": 1500,
+        "Crossover": 1500,
+        "SUV": 1500,
+        "Van": 1500
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Alloy Wheel Detailing",
+      "description": "Deep cleaning and detailing of alloy wheels",
+      "prices": {
+        "Car/Mini Van": 2000,
+        "Crossover": 2000,
+        "SUV": 2000,
+        "Van": 2000
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Engine Bay Degrease & Clean",
+      "description": "Professional engine bay degreasing and cleaning service",
+      "prices": {
+        "Car/Mini Van": 2500,
+        "Crossover": 2500,
+        "SUV": 2500,
+        "Van": 2500
+      }
+    },
+    {
+      "brand": "Standard",
+      "name": "Headlight Polish",
+      "description": "Restore clarity to oxidized or yellowed headlight lenses",
+      "prices": {
+        "Car/Mini Van": 3000,
+        "Crossover": 3000,
+        "SUV": 3500,
+        "Van": 3500
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Wash + Vacuum",
+      "description": "Premium AutoGlym wash products with interior vacuum",
+      "prices": {
+        "Car/Mini Van": 3000,
+        "Crossover": 3300,
+        "SUV": 3600,
+        "Van": 3900
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Wash + Vacuum + Wax",
+      "description": "Full AutoGlym service with hand-applied premium wax",
+      "prices": {
+        "Car/Mini Van": 4500,
+        "Crossover": 4800,
+        "SUV": 5200,
+        "Van": 5500
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Wash + Vacuum + Machine Wax",
+      "description": "Premium AutoGlym service with machine wax application",
+      "prices": {
+        "Car/Mini Van": 6500,
+        "Crossover": 7000,
+        "SUV": 7500,
+        "Van": 8000
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Leather Treatment",
+      "description": "AutoGlym leather care products for conditioning and protection",
+      "prices": {
+        "Car/Mini Van": 4000,
+        "Crossover": 4000,
+        "SUV": 4000,
+        "Van": 4000
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Water Spot Remover and Glass Polish",
+      "description": "AutoGlym glass care for spotless, streak-free windows",
+      "prices": {
+        "Car/Mini Van": 2000,
+        "Crossover": 2000,
+        "SUV": 2000,
+        "Van": 2000
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Alloy Wheel Detailing",
+      "description": "Premium AutoGlym wheel cleaning and protection",
+      "prices": {
+        "Car/Mini Van": 2500,
+        "Crossover": 2500,
+        "SUV": 2500,
+        "Van": 2500
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Engine Bay Degrease and Clean",
+      "description": "Professional engine bay service using AutoGlym products",
+      "prices": {
+        "Car/Mini Van": 3000,
+        "Crossover": 3000,
+        "SUV": 3000,
+        "Van": 3000
+      }
+    },
+    {
+      "brand": "AutoGlym",
+      "name": "Headlight Polish",
+      "description": "AutoGlym headlight restoration for maximum clarity",
+      "prices": {
+        "Car/Mini Van": 3500,
+        "Crossover": 3500,
+        "SUV": 4000,
+        "Van": 4000
+      }
+    }
+  ]
+}

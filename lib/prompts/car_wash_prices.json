@@ -1,0 +1,60 @@
+{
+  "normal": [
+    {
+      "package": "Wash and Vacuum",
+      "prices": {
+        "carMiniVan": "2300",
+        "crossover": "2500",
+        "suv": "2800",
+        "van": "3000"
+      }
+    },
+    {
+      "package": "Wash, Vacuum and Interior Clean",
+      "prices": {
+        "carMiniVan": "3500",
+        "crossover": "3800",
+        "suv": "4200",
+        "van": "4500"
+      }
+    },
+    {
+      "package": "Full Service",
+      "prices": {
+        "carMiniVan": "5000",
+        "crossover": "5500",
+        "suv": "6000",
+        "van": "6500"
+      }
+    }
+  ],
+  "autoGlym": [
+    {
+      "package": "AutoGlym Wash and Vacuum",
+      "prices": {
+        "carMiniVan": "3000",
+        "crossover": "3300",
+        "suv": "3600",
+        "van": "3900"
+      }
+    },
+    {
+      "package": "AutoGlym Full Service",
+      "prices": {
+        "carMiniVan": "6500",
+        "crossover": "7000",
+        "suv": "7500",
+        "van": "8000"
+      }
+    },
+    {
+      "package": "AutoGlym Premium Detailing",
+      "prices": {
+        "carMiniVan": "12000",
+        "crossover": "13000",
+        "suv": "14000",
+        "van": "15000"
+      }
+    }
+  ]
+}

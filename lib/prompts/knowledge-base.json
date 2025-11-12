@@ -1,0 +1,83 @@
+{
+  "brands": ["Standard", "AutoGlym"],
+  "vehicle_types": {
+    "carMiniVan": "Car/Mini Van",
+    "crossover": "Crossover",
+    "suv": "SUV",
+    "van": "Van"
+  },
+  "packages": {
+    "Standard": [
+      {
+        "name": "Wash + Vacuum",
+        "prices": { "carMiniVan": 2500, "crossover": 2700, "suv": 2800, "van": 2800 }
+      },
+      {
+        "name": "Wash & Vacuum (Meguiar’s PH balanced Shampoo for coated Vehicles)",
+        "prices": { "carMiniVan": 2700, "crossover": 2800, "suv": 2900, "van": 2900 }
+      },
+      {
+        "name": "Wash + Vacuum + Wax (AutoGlym)",
+        "prices": { "carMiniVan": 3900, "crossover": 4100, "suv": 4500, "van": 4500 }
+      },
+      {
+        "name": "Wash + Vacuum + Machine Wax (AutoGlym)",
+        "prices": { "carMiniVan": 4700, "crossover": 4900, "suv": 5300, "van": 5300 }
+      },
+      {
+        "name": "Leather Treatment",
+        "prices": { "carMiniVan": 3900, "crossover": 4400, "suv": 4900, "van": 5900 }
+      },
+      {
+        "name": "Water Spot Remover and Glass Polish (AutoGlym)",
+        "prices": { "carMiniVan": 15000, "crossover": 16500, "suv": 18000, "van": 18500 }
+      },
+      {
+        "name": "Alloy Wheel Detailing",
+        "prices": { "carMiniVan": 2100, "crossover": 2100, "suv": 2100, "van": 2100 }
+      },
+      {
+        "name": "Engine Bay Degrease & Clean",
+        "prices": { "carMiniVan": 1600, "crossover": 1600, "suv": 1600, "van": 1600 }
+      },
+      {
+        "name": "Headlight Polish",
+        "prices": { "carMiniVan": 3000, "crossover": 3000, "suv": 3500, "van": 3500 }
+      }
+    ],
+    "AutoGlym": [
+      {
+        "name": "Wash + Vacuum (AutoGlym)",
+        "prices": { "carMiniVan": 2800, "crossover": 3000, "suv": 3100, "van": 3100 }
+      },
+      {
+        "name": "Wash + Vacuum + Wax (AutoGlym)",
+        "prices": { "carMiniVan": 4200, "crossover": 4400, "suv": 4800, "van": 4800 }
+      },
+      {
+        "name": "Wash + Vacuum + Machine Wax (AutoGlym)",
+        "prices": { "carMiniVan": 5000, "crossover": 5200, "suv": 5600, "van": 5600 }
+      },
+      {
+        "name": "Leather Treatment(AutoGlym)",
+        "prices": { "carMiniVan": 4500, "crossover": 5000, "suv": 5500, "van": 6500 }
+      },
+      {
+        "name": "Water Spot Remover and Glass Polish(AutoGlym)",
+        "prices": { "carMiniVan": 15000, "crossover": 16500, "suv": 18000, "van": 18500 }
+      },
+      {
+        "name": "Alloy Wheel Detailing(AutoGlym)",
+        "prices": { "carMiniVan": 2800, "crossover": 2800, "suv": 2800, "van": 2800 }
+      },
+      {
+        "name": "Engine Bay Degrease and Clean(AutoGlym)",
+        "prices": { "carMiniVan": 1600, "crossover": 1600, "suv": 1600, "van": 1600 }
+      },
+      {
+        "name": "Headlight Polish(AutoGlym)",
+        "prices": { "carMiniVan": 3000, "crossover": 3000, "suv": 3500, "van": 3500 }
+      }
+    ]
+  }
+}

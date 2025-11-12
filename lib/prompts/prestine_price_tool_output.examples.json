@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "description": "Example API response formats for Prestine Mobile Car Wash pricing tools",
+    "version": "2025-11-11",
+    "purpose": "These formats should be used by the AI assistant when responding to customer queries"
+  },
+  "examples": {
+    "list_packages": {
+      "description": "Response format when customer asks 'What services do you offer?' or 'Show me all packages'",
+      "response": {
+        "brands": ["Standard", "AutoGlym"],
+        "vehicle_types": ["Car/Mini Van", "Crossover", "SUV", "Van"],
+        "packages_by_brand": {
+          "Standard": [
+            "Wash + Vacuum",
+            "Wash & Vacuum (Meguiar's PH balanced Shampoo for coated Vehicles)",
+            "Wash + Vacuum + Wax (AutoGlym)",
+            "Wash + Vacuum + Machine Wax (AutoGlym)",
+            "Leather Treatment",
+            "Water Spot Remover and Glass Polish (AutoGlym)",
+            "Alloy Wheel Detailing",
+            "Engine Bay Degrease & Clean",
+            "Headlight Polish"
+          ],
+          "AutoGlym": [
+            "Wash + Vacuum",
+            "Wash + Vacuum + Wax",
+            "Wash + Vacuum + Machine Wax",
+            "Leather Treatment",
+            "Water Spot Remover and Glass Polish",
+            "Alloy Wheel Detailing",
+            "Engine Bay Degrease and Clean",
+            "Headlight Polish"
+          ]
+        }
+      }
+    },
+    "get_price": {
+      "description": "Response format when customer asks for a specific service price",
+      "examples": [
+        {
+          "query": "How much is Headlight Polish for my SUV?",
+          "response": {
+            "brand": "Standard",
+            "package": "Headlight Polish",
+            "vehicle_type": "SUV",
+            "price": 3500,
+            "currency": "LKR",
+            "source": "Prestine price sheet",
+            "description": "Restore clarity to oxidized or yellowed headlight lenses"
+          }
+        },
+        {
+          "query": "AutoGlym wash price for Car?",
+          "response": {
+            "brand": "AutoGlym",
+            "package": "Wash + Vacuum",
+            "vehicle_type": "Car/Mini Van",
+            "price": 3000,
+            "currency": "LKR",
+            "source": "Prestine price sheet",
+            "description": "Premium AutoGlym wash products with interior vacuum"
+          }
+        },
+        {
+          "query": "Leather treatment for my Crossover?",
+          "response": {
+            "brand": "Standard",
+            "package": "Leather Treatment",
+            "vehicle_type": "Crossover",
+            "price": 3500,
+            "currency": "LKR",
+            "source": "Prestine price sheet",
+            "description": "Professional leather cleaning, conditioning, and protection"
+          }
+        }
+      ]
+    },
+    "quote_total": {
+      "description": "Response format when customer wants multiple services or a total quote",
+      "examples": [
+        {
+          "query": "I want Wash + Vacuum and Headlight Polish for my SUV",
+          "response": {
+            "vehicle_type": "SUV",
+            "items": [
+              {
+                "brand": "Standard",
+                "package": "Wash + Vacuum",
+                "price": 2800
+              },
+              {
+                "brand": "Standard",
+                "package": "Headlight Polish",
+                "price": 3500
+              }
+            ],
+            "subtotal": 6300,
+            "discount": 0,
+            "discount_reason": null,
+            "tax": 0,
+            "total": 6300,
+            "currency": "LKR",
+            "source": "Prestine price sheet"
+          }
+        },
+        {
+          "query": "Full AutoGlym package for my Van - wash, wax, and leather treatment",
+          "response": {
+            "vehicle_type": "Van",
+            "items": [
+              {
+                "brand": "AutoGlym",
+                "package": "Wash + Vacuum + Wax",
+                "price": 5500
+              },
+              {
+                "brand": "AutoGlym",
+                "package": "Leather Treatment",
+                "price": 4000
+              }
+            ],
+            "subtotal": 9500,
+            "discount": 0,
+            "discount_reason": null,
+            "tax": 0,
+            "total": 9500,
+            "currency": "LKR",
+            "source": "Prestine price sheet"
+          }
+        },
+        {
+          "query": "Complete detailing - machine wax, wheel detailing, engine clean for Crossover",
+          "response": {
+            "vehicle_type": "Crossover",
+            "items": [
+              {
+                "brand": "Standard",
+                "package": "Wash + Vacuum + Machine Wax (AutoGlym)",
+                "price": 5500
+              },
+              {
+                "brand": "Standard",
+                "package": "Alloy Wheel Detailing",
+                "price": 2000
+              },
+              {
+                "brand": "Standard",
+                "package": "Engine Bay Degrease & Clean",
+                "price": 2500
+              }
+            ],
+            "subtotal": 10000,
+            "discount": 0,
+            "discount_reason": null,
+            "tax": 0,
+            "total": 10000,
+            "currency": "LKR",
+            "source": "Prestine price sheet"
+          }
+        }
+      ]
+    },
+    "compare_packages": {
+      "description": "Response format when customer wants to compare Standard vs AutoGlym",
+      "example": {
+        "query": "What's the difference between Standard and AutoGlym wash for my Car?",
+        "response": {
+          "vehicle_type": "Car/Mini Van",
+          "comparison": [
+            {
+              "brand": "Standard",
+              "package": "Wash + Vacuum",
+              "price": 2500,
+              "description": "Basic exterior wash and interior vacuum cleaning"
+            },
+            {
+              "brand": "AutoGlym",
+              "package": "Wash + Vacuum",
+              "price": 3000,
+              "description": "Premium AutoGlym wash products with interior vacuum"
+            }
+          ],
+          "price_difference": 500,
+          "recommendation": "AutoGlym uses premium British-made products for superior shine and protection. Worth the extra LKR 500 for better results and longer-lasting protection.",
+          "currency": "LKR"
+        }
+      }
+    },
+    "vehicle_type_pricing": {
+      "description": "Response format showing all prices for a specific vehicle type",
+      "example": {
+        "query": "Show me all prices for my SUV",
+        "response": {
+          "vehicle_type": "SUV",
+          "packages": [
+            {
+              "brand": "Standard",
+              "name": "Wash + Vacuum",
+              "price": 2800
+            },
+            {
+              "brand": "Standard",
+              "name": "Wash & Vacuum (Meguiar's for coated)",
+              "price": 2900
+            },
+            {
+              "brand": "Standard",
+              "name": "Wash + Vacuum + Wax",
+              "price": 4200
+            },
+            {
+              "brand": "Standard",
+              "name": "Wash + Vacuum + Machine Wax",
+              "price": 6000
+            },
+            {
+              "brand": "AutoGlym",
+              "name": "Wash + Vacuum",
+              "price": 3600
+            },
+            {
+              "brand": "AutoGlym",
+              "name": "Wash + Vacuum + Wax",
+              "price": 5200
+            },
+            {
+              "brand": "AutoGlym",
+              "name": "Wash + Vacuum + Machine Wax",
+              "price": 7500
+            }
+          ],
+          "currency": "LKR"
+        }
+      }
+    }
+  },
+  "sinhala_responses": {
+    "description": "Example Sinhala language responses for common queries",
+    "examples": [
+      {
+        "query_english": "How much for SUV wash?",
+        "query_sinhala": "SUV එකට wash එකක් කීයද?",
+        "response_sinhala": "ඔබේ SUV එකට Standard Wash + Vacuum එක රුපියල් 2800 යි. AutoGlym premium wash එක රුපියල් 3600 යි. කැමතිද වැඩිපුර විස්තර?",
+        "response_english": "For your SUV, Standard Wash + Vacuum is Rs. 2800. AutoGlym premium wash is Rs. 3600. Would you like more details?"
+      },
+      {
+        "query_english": "What's included in full service?",
+        "query_sinhala": "Full service එකේ මොනවද තියෙන්නේ?",
+        "response_sinhala": "Full service එකේ wash, vacuum, සහ machine wax තියෙනවා. SUV එකට Standard එක රුපියල් 6000 යි. AutoGlym premium එක රුපියල් 7500 යි.",
+        "response_english": "Full service includes wash, vacuum, and machine wax. For SUV, Standard is Rs. 6000. AutoGlym premium is Rs. 7500."
+      },
+      {
+        "query_english": "Do you do headlight restoration?",
+        "query_sinhala": "Headlight polish කරනවද?",
+        "response_sinhala": "ඔව්, අපි headlight polish කරනවා. SUV එකට රුපියල් 3500 යි. මේකෙන් ඔබේ headlight වල oxidation හරි yellowing එක ඉවත් කරලා clarity ආපසු ගෙනෙනවා.",
+        "response_english": "Yes, we do headlight polish. For SUV it's Rs. 3500. This removes oxidation and yellowing to restore clarity."
+      }
+    ]
+  }
+}
