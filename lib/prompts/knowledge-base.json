@@ -17,11 +17,11 @@
         "prices": { "carMiniVan": 2700, "crossover": 2800, "suv": 2900, "van": 2900 }
       },
       {
-        "name": "Wash + Vacuum + Wax (AutoGlym)",
+        "name": "Wash + Vacuum + Wax",
         "prices": { "carMiniVan": 3900, "crossover": 4100, "suv": 4500, "van": 4500 }
       },
       {
-        "name": "Wash + Vacuum + Machine Wax (AutoGlym)",
+        "name": "Wash + Vacuum + Machine Wax ",
         "prices": { "carMiniVan": 4700, "crossover": 4900, "suv": 5300, "van": 5300 }
       },
       {
@@ -29,7 +29,7 @@
         "prices": { "carMiniVan": 3900, "crossover": 4400, "suv": 4900, "van": 5900 }
       },
       {
-        "name": "Water Spot Remover and Glass Polish (AutoGlym)",
+        "name": "Water Spot Remover and Glass Polish",
         "prices": { "carMiniVan": 15000, "crossover": 16500, "suv": 18000, "van": 18500 }
       },
       {
