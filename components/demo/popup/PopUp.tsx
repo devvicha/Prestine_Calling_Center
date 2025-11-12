@@ -15,7 +15,7 @@ const PopUp: React.FC<PopUpProps> = ({ onClose }) => {
     <div className="popup-overlay">
       <div className="popup-content">
         <img
-          src="/components/ui/Image/image_Brand.png"
+          src="/images/image_Brand.png"
           alt="Prestine Mobile Car Wash Logo"
           className="brand-logo"
         />
