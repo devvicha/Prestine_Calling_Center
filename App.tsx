@@ -18,10 +18,9 @@
  * limitations under the License.
  */
 
-import ControlTray from './stt/components/ControlTray';
+import AutoStreamingRunner from './components/AutoStreamingRunner';
 import ErrorScreen from './components/demo/ErrorScreen';
 import StreamingConsole from './components/demo/streaming-console/StreamingConsole';
-
 import Header from './components/Header';
 import { LiveAPIProvider } from './llm/contexts/LiveAPIContext';
 
@@ -40,16 +39,14 @@ function App() {
   return (
     <div className="App">
       <LiveAPIProvider apiKey={API_KEY}>
+        <AutoStreamingRunner />
         <ErrorScreen />
         <Header />
         <div className="streaming-console">
           <main>
             <div className="main-app-area">
               <StreamingConsole />
-
             </div>
-
-            <ControlTray></ControlTray>
           </main>
         </div>
       </LiveAPIProvider>

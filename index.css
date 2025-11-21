@@ -398,6 +398,12 @@ header .header-right {
   gap: 8px;
 }
 
+header .brand-logo {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
 header .settings-button,
 header .export-button {
   font-size: 30px;

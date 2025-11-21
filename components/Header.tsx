@@ -11,6 +11,11 @@ export default function Header() {
         <p>Your premium car wash assistant, ready to serve 24/7.</p>
       </div>
       <div className="header-right">
+        <img
+          src="/images/image_Brand.png"
+          alt="Prestine Mobile Car Wash"
+          className="brand-logo"
+        />
       </div>
     </header>
   );

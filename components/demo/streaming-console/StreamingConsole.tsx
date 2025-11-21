@@ -2,18 +2,11 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import { useEffect, useRef, useState } from 'react';
-import PopUp from '../popup/PopUp';
-import WelcomeScreen from '../welcome-screen/WelcomeScreen';
-import { LiveServerContent, Modality } from '@google/genai';
+import { useEffect, useRef } from 'react';
+import { LiveServerContent } from '@google/genai';
 
 import { useLiveAPIContext } from '../../../llm/contexts/LiveAPIContext';
-import {
-  useSettings,
-  useLogStore,
-  useTools,
-  ConversationTurn,
-} from '../../../llm/lib/state';
+import { useLogStore, ConversationTurn } from '../../../llm/lib/state';
 
 const formatTimestamp = (date: Date) => {
   const pad = (num: number, size = 2) => num.toString().padStart(size, '0');
@@ -51,56 +44,9 @@ const renderContent = (text: string) => {
 
 
 export default function StreamingConsole() {
-  const { client, setConfig } = useLiveAPIContext();
-  const { systemPrompt, voice } = useSettings();
-  const { tools } = useTools();
+  const { client } = useLiveAPIContext();
   const turns = useLogStore(state => state.turns);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [showPopUp, setShowPopUp] = useState(true);
-
-  const handleClosePopUp = () => {
-    setShowPopUp(false);
-  };
-
-  // Set the configuration for the Live API
-  useEffect(() => {
-    const enabledTools = tools
-      .filter(tool => tool.isEnabled)
-      .map(tool => ({
-        functionDeclarations: [
-          {
-            name: tool.name,
-            description: tool.description,
-            parameters: tool.parameters,
-          },
-        ],
-      }));
-
-    // Using `any` for config to accommodate `speechConfig`, which is not in the
-    // current TS definitions but is used in the working reference example.
-    const config: any = {
-      responseModalities: [Modality.AUDIO],
-      speechConfig: {
-        voiceConfig: {
-          prebuiltVoiceConfig: {
-            voiceName: voice,
-          },
-        },
-      },
-      inputAudioTranscription: {},
-      outputAudioTranscription: {},
-      systemInstruction: {
-        parts: [
-          {
-            text: systemPrompt,
-          },
-        ],
-      },
-      tools: enabledTools,
-    };
-
-    setConfig(config);
-  }, [setConfig, systemPrompt, tools, voice]);
 
   useEffect(() => {
     const { addTurn, updateLastTurn } = useLogStore.getState();
@@ -191,56 +137,54 @@ export default function StreamingConsole() {
 
   return (
     <div className="transcription-container">
-      {showPopUp && <PopUp onClose={handleClosePopUp} />}
-      {turns.length === 0 ? (
-        <WelcomeScreen />
-      ) : (
-        <div className="transcription-view" ref={scrollRef}>
-          {turns.map((t, i) => (
-            <div
-              key={i}
-              className={`transcription-entry ${t.role} ${!t.isFinal ? 'interim' : ''
+      <div className="transcription-view" ref={scrollRef}>
+        {turns.length === 0
+          ? null
+          : turns.map((t, i) => (
+              <div
+                key={i}
+                className={`transcription-entry ${t.role} ${
+                  !t.isFinal ? 'interim' : ''
                 }`}
-            >
-              <div className="transcription-header">
-                <div className="transcription-source">
-                  {t.role === 'user'
-                    ? 'You'
-                    : t.role === 'agent'
-                      ? 'Agent'
-                      : 'System'}
+              >
+                <div className="transcription-header">
+                  <div className="transcription-source">
+                    {t.role === 'user'
+                      ? 'You'
+                      : t.role === 'agent'
+                        ? 'Agent'
+                        : 'System'}
+                  </div>
+                  <div className="transcription-timestamp">
+                    {formatTimestamp(t.timestamp)}
+                  </div>
                 </div>
-                <div className="transcription-timestamp">
-                  {formatTimestamp(t.timestamp)}
+                <div className="transcription-text-content">
+                  {renderContent(t.text)}
                 </div>
+                {t.groundingChunks && t.groundingChunks.length > 0 && (
+                  <div className="grounding-chunks">
+                    <strong>Sources:</strong>
+                    <ul>
+                      {t.groundingChunks
+                        .filter(chunk => chunk.web && chunk.web.uri)
+                        .map((chunk, index) => (
+                          <li key={index}>
+                            <a
+                              href={chunk.web!.uri}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {chunk.web!.title || chunk.web!.uri}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-              <div className="transcription-text-content">
-                {renderContent(t.text)}
-              </div>
-              {t.groundingChunks && t.groundingChunks.length > 0 && (
-                <div className="grounding-chunks">
-                  <strong>Sources:</strong>
-                  <ul>
-                    {t.groundingChunks
-                      .filter(chunk => chunk.web && chunk.web.uri)
-                      .map((chunk, index) => (
-                        <li key={index}>
-                          <a
-                            href={chunk.web!.uri}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {chunk.web!.title || chunk.web!.uri}
-                          </a>
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+      </div>
     </div>
   );
 }
